@@ -1,0 +1,322 @@
+/* Add these styles at the top after :root */
+.contact-section {
+    padding: 8rem 0 2rem;
+    background: linear-gradient(120deg, 
+        rgba(0, 183, 255, 0.05) 0%, 
+        rgba(0, 255, 209, 0.05) 50%,
+        rgba(0, 183, 255, 0.05) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add decorative elements */
+.contact-section::before,
+.contact-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.contact-section::before {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, 
+        rgba(0, 183, 255, 0.1) 0%, 
+        rgba(0, 255, 209, 0.1) 100%);
+    top: -250px;
+    right: -250px;
+    filter: blur(50px);
+}
+
+.contact-section::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, 
+        rgba(0, 255, 209, 0.1) 0%, 
+        rgba(0, 183, 255, 0.1) 100%);
+    bottom: -200px;
+    left: -200px;
+    filter: blur(40px);
+}
+
+.contact-container {
+    position: relative;  /* Add this to keep content above overlay */
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.contact-content {
+    display: grid;
+    gap: 3rem;
+}
+
+.contact-content h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--blackColor);
+    background: var(--gradientColor);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.contact-content > p {
+    text-align: center;
+    color: var(--textColor);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.contact-option {
+    background: var(--whiteColor);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.contact-option:hover {
+    background: var(--cardBG);
+    border-color: var(--PrimaryColor);
+    transform: translateY(-10px);
+}
+
+.contact-option-icon {
+    font-size: 2.5rem;
+    color: var(--PrimaryColor);
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.contact-option h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--blackColor);
+}
+
+.contact-option h5 {
+    font-size: 1rem;
+    color: var(--textColor);
+    margin-bottom: 1rem;
+}
+
+.contact-option a {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--PrimaryColor);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-option a:hover {
+    color: var(--SecondaryColor);
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--whiteColor);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid var(--inputColor);
+    border-radius: 0.7rem;
+    background: var(--bodyColor);
+    font-size: 1rem;
+    color: var(--blackColor);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--textColor);
+    opacity: 0.7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--PrimaryColor);
+    background: var(--whiteColor);
+    outline: none;
+}
+
+.submit-btn {
+    width: max-content;
+    padding: 1rem 2.5rem;
+    background: var(--gradientColor);
+    color: var(--whiteColor);
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.1rem;
+    font-weight: 600;
+    align-self: center;
+    margin-top: 1rem;
+    animation: buttonPulse 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: buttonPulse 0.3s ease-in-out;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .contact-options {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contact-options {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .contact-content h2 {
+        font-size: 2rem;
+    }
+
+    .contact-content > p {
+        font-size: 1rem;
+    }
+}
+
+/* Custom styles for toast notifications */
+.Toastify__toast {
+    border-radius: 8px !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.Toastify__toast--success {
+    background: var(--PrimaryColor) !important;
+}
+
+.Toastify__toast--error {
+    background: #ff6b6b !important;
+}
+
+/* Style for disabled button */
+.submit-btn:disabled {
+    background: var(--greyText);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.submit-btn:disabled:hover {
+    transform: none;
+}
+
+/* Add animation classes */
+[data-aos] {
+    opacity: 0;
+    transition-duration: 1s;
+    transition-property: opacity, transform;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(100px);
+}
+
+[data-aos="fade-down"] {
+    transform: translateY(-100px);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Add hover animations */
+.contact-option {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add pulse animation to icons */
+.contact-option-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Smooth transition for form elements */
+.form-group input,
+.form-group textarea {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button animation */
+.submit-btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    animation: buttonPulse 0.3s ease-in-out;
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

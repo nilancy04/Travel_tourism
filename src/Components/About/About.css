@@ -1,0 +1,215 @@
+/* Basic CSS for About page */
+.aboutPage {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .aboutPage h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .aboutPage p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+.about-section {
+    padding: 8rem 0 2rem;
+    background: linear-gradient(120deg, 
+        rgba(0, 183, 255, 0.05) 0%, 
+        rgba(0, 255, 209, 0.05) 50%,
+        rgba(0, 183, 255, 0.05) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add decorative elements */
+.about-section::before,
+.about-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.about-section::before {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, 
+        rgba(0, 183, 255, 0.1) 0%, 
+        rgba(0, 255, 209, 0.1) 100%);
+    top: -250px;
+    right: -250px;
+    filter: blur(50px);
+}
+
+.about-section::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, 
+        rgba(0, 255, 209, 0.1) 0%, 
+        rgba(0, 183, 255, 0.1) 100%);
+    bottom: -200px;
+    left: -200px;
+    filter: blur(40px);
+}
+
+.about-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: var(--gradientColor);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.about-header p {
+    color: var(--textColor);
+    font-size: 1.1rem;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.mission, .vision {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.mission h2, .vision h2 {
+    color: var(--PrimaryColor);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.mission p, .vision p {
+    color: var(--textColor);
+    line-height: 1.6;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--PrimaryColor);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: var(--blackColor);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--textColor);
+}
+
+.why-choose-us {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    color: var(--PrimaryColor);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature h3 {
+    color: var(--blackColor);
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    color: var(--textColor);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .why-choose-us {
+        padding: 2rem;
+    }
+}
+  

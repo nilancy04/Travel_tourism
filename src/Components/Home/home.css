@@ -1,0 +1,1275 @@
+:root{
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 235);
+}
+
+
+.home{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    .overlay{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgb(47, 106, 127);
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        mix-blend-mode: hard-light;
+    }
+
+    video{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+    }
+
+    .homeContent{
+        width: 100%;
+        height: max-content;
+        padding: 8rem 1.5rem 3rem;
+        display: flex;
+        row-gap: 3rem;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin: auto;
+        color: var(--whiteColor);
+        z-index: 100;
+
+        .textDiv{
+            padding: 3rem 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+
+            .smallText{
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 4px;
+                padding: 1rem 2.5rem;
+                border-radius: 3rem;
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.15);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                color: var(--whiteColor);
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                animation: fadeInDown 1s ease;
+                position: relative;
+                z-index: 2;
+            }
+
+            .homeTitle{
+                position: relative;
+                font-size: 4rem;
+                font-weight: 800;
+                color: var(--whiteColor);
+                line-height: 1.3;
+                text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+                max-width: 800px;
+                margin: 0 auto;
+                animation: fadeInUp 1s ease;
+                z-index: 1;
+            }
+
+            .smallText::after {
+                content: '';
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+                border-radius: 3rem;
+                background: var(--gradientColor);
+                z-index: -1;
+                filter: blur(20px);
+                opacity: 0.5;
+            }
+
+            /* Add gradient text effect for "Travel" */
+            .homeTitle span {
+                background: linear-gradient(to right, #00ff87, #60efff);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: none;
+                padding: 0 10px;
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Add glow effect */
+            .homeTitle span::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 110%;
+                height: 110%;
+                background: inherit;
+                filter: blur(30px);
+                opacity: 0.3;
+                z-index: -1;
+            }
+        }
+
+        .cardDiv{
+            position: relative;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            gap: 1.5rem;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease;
+
+            label{
+                display: block;
+                color: var(--textColor);
+                padding-bottom: 10px;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
+
+            .label_total{
+                justify-content: space-between;
+                align-items: center;
+
+                .total{
+                    color: var(--textColor);
+                    font-size: 18px;
+                    padding-bottom: 10px;
+                }
+            }
+            
+            .input{
+                height: 45px;
+                padding: 0 1.5rem;
+                background: var(--whiteColor);
+                border-radius: 10px;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+
+                input{
+                    background: none;
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: var(--textColor);
+                    &::placeholder{
+                        font-size: 13px;
+                        opacity: 0.8;
+                        font-weight: 400;
+                        color: var(--textColor);
+                    }
+                }
+
+                .icon{
+                    font-size: 18px;
+                    color: var(--PrimaryColor)!important;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+
+                .input[type=range]{
+                    background: blue;
+                }
+            }
+
+            .input:hover, 
+            .input:focus-within {
+                border-color: var(--PrimaryColor);
+                background: var(--whiteColorDeam);
+                box-shadow: 0 2px 8px rgba(2, 15, 29, 0.1);
+            }
+
+            .input input:focus::placeholder {
+                opacity: 0.5;
+            }
+
+            .destinationInput .input {
+                background: var(--whiteColor);
+                box-shadow: 0 2px 4px rgba(2, 15, 29, 0.1);
+            }
+
+            .destinationInput .input:hover {
+                background: var(--whiteColorDeam);
+                box-shadow: 0 2px 8px rgba(2, 15, 29, 0.15);
+            }
+
+             .searchOptions{
+                position: absolute;
+                background: var(--gradientColor);
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
+
+                &:hover{
+                    background: var(--PrimaryColor);   
+                }
+
+                .icon{
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+                span{
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+
+             }
+        }
+
+        .homeFooterIcons{
+            width: 100%;
+            justify-content: space-between;
+
+            .icon{
+                font-size: 20px;
+                margin: 0 5px;
+                color: var(--whiteColor);
+                font-weight: 600;
+                &:hover{
+                    color: var(--PrimaryColor);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width: 500px) {
+    .home{
+        .homeContent{
+            .textDiv{
+                .smallText{
+                    font-size: 16px;
+                }
+
+                .homeTitle{
+                    position: relative;
+                    font-size: 2.3rem;
+                    width: max-content;
+
+
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        background: var(--SecondaryColor);
+                        height: 5px;
+                        width: 145px;
+                        right: 0px;
+                        bottom: 5px;
+                        z-index: -1;
+
+                    }
+                }
+            }
+
+            .cardDiv{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    }   
+}
+
+@media screen and (min-width: 660px) {
+    .home{
+        .homeContent{
+            .cardDiv{
+                padding: 2rem 1rem;
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }   
+}
+
+@media screen and (min-width: 940px) {
+    .home{
+        height: 85vh;
+    }   
+}
+
+@media screen and (min-width: 1240px) {
+    .home{
+        height: 95vh;
+
+        .homeContent{
+            padding-left: 0;
+            padding-right: 0;
+
+
+            .cardDiv{
+                padding: 2rem 1rem;
+                grid-template-columns: repeat(3,1fr);
+
+                .input{
+                    margin-bottom: 1rem;
+                }
+
+                .searchOptions{
+                    bottom: -1rem;
+                    padding: 8px 1rem;
+
+
+                    span{
+                        font-size: 17px;
+                        
+                    }
+                }
+            }
+        }
+    }   
+}
+
+/* Add these styles to fix the input fields */
+.cardDiv .input input[type="date"] {
+    color: var(--textColor);
+    font-size: 13px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.cardDiv .input input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) sepia(67%) saturate(1000%) hue-rotate(178deg);
+}
+
+/* Fix the range input styling */
+.cardDiv .input input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 3px;
+    background: var(--PrimaryColor);
+    border-radius: 3px;
+}
+
+.cardDiv .input input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--PrimaryColor);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Add this to your existing styles */
+.cardDiv .priceInput .price_range {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 0;
+}
+
+.cardDiv .priceInput .price_range span {
+    font-size: 12px;
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+/* Add these styles for social media links */
+.homeFooterIcons .rightIcons a {
+    text-decoration: none;
+    color: var(--whiteColor);
+    transition: all 0.3s ease;
+}
+
+.homeFooterIcons .rightIcons a:hover {
+    color: var(--PrimaryColor);
+    transform: translateY(-3px);
+}
+
+.homeFooterIcons .rightIcons a .icon {
+    font-size: 20px;
+    margin: 0 5px;
+    font-weight: 600;
+}
+
+/* Update the filter modal styles */
+.filterModal {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98%;
+    max-width: 1200px;
+    background: var(--whiteColor);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-bottom: 5rem;
+}
+
+.filterContent {
+    width: 100%;
+    padding: 0.8rem;
+}
+
+.filterContent h3 {
+    color: var(--blackColor);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid var(--PrimaryColor);
+}
+
+.filterGroup {
+    background: var(--bodyColor);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filterGroup:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-color: var(--PrimaryColor);
+}
+
+.filterGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--blackColor);
+    font-weight: 600;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.filterGroup select,
+.filterGroup input[type="number"] {
+    flex-grow: 1;
+    max-height: 40px;
+}
+
+.filterGroup input[type="number"]:focus,
+.filterGroup select:focus {
+    border-color: var(--PrimaryColor);
+    box-shadow: 0 0 0 3px rgba(var(--PrimaryColor), 0.1);
+    outline: none;
+}
+
+.activitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.activityCheckbox {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background: var(--whiteColor);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.9rem;
+    min-height: 45px;
+    justify-content: flex-start;
+}
+
+.activityCheckbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: var(--PrimaryColor);
+    flex-shrink: 0;
+}
+
+.activityCheckbox span {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.activityCheckbox:hover {
+    background: var(--SecondaryColor);
+    color: var(--whiteColor);
+}
+
+.filterActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filterActions button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.applyFilters {
+    background: var(--gradientColor);
+    color: var(--whiteColor);
+    flex: 1.5;
+}
+
+.clearFilters {
+    background: var(--bodyColor);
+    color: var(--textColor);
+    flex: 1;
+}
+
+.filterActions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.filterContent .closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bodyColor);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--textColor);
+    transition: all 0.3s ease;
+}
+
+.filterContent .closeBtn:hover {
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+    transform: rotate(90deg);
+}
+
+@media screen and (min-width: 768px) {
+    .filterContent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .filterContent h3 {
+        grid-column: 1 / -1;
+    }
+
+    .filterGroup:nth-last-child(2),
+    .filterActions {
+        grid-column: 1 / -1;
+    }
+
+    .filterGroup:nth-last-child(2) {
+        min-height: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .filterModal {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .filterGroup {
+        padding: 1.5rem;
+    }
+}
+
+/* Update date input styles */
+.dateInput .input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dateInput .input input[type="date"] {
+    width: 100%;
+    color: var(--textColor);
+    font-size: 13px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Style the calendar icon */
+.dateInput .input input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0; /* Hide the default icon */
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Add custom calendar icon */
+.dateInput .input::after {
+    content: "📅";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 18px;
+    color: var(--PrimaryColor);
+}
+
+/* Remove the previous duplicate styles */
+.dateInput .input .calendar-input {
+    display: none;
+}
+
+/* Improve placeholder visibility */
+.dateInput .input input[type="text"]::placeholder {
+    color: var(--greyText);
+    opacity: 0.7;
+}
+
+/* Add validation styles */
+.dateInput .input input[type="text"].invalid {
+    border-color: red;
+}
+
+/* Add smooth scrollbar for the filter modal */
+.filterModal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.filterModal::-webkit-scrollbar-track {
+    background: var(--whiteColorDeam);
+    border-radius: 4px;
+}
+
+.filterModal::-webkit-scrollbar-thumb {
+    background: var(--PrimaryColor);
+    border-radius: 4px;
+}
+
+.homeFooterIcons {
+    position: relative;
+    z-index: 998;
+    margin-top: 2rem;
+}
+
+/* Add overlay to prevent interaction with background */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 999;
+    pointer-events: none;
+}
+
+/* Update the container positioning */
+.cardDiv {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Update number input styling */
+.filterGroup input[type="number"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--textColor);
+    background: var(--whiteColor);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 40px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Remove spinner buttons for Chrome, Safari, Edge, Opera */
+.filterGroup input[type="number"]::-webkit-outer-spin-button,
+.filterGroup input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Style focus state */
+.filterGroup input[type="number"]:focus {
+    border-color: var(--PrimaryColor);
+    box-shadow: 0 0 0 3px rgba(var(--PrimaryColor), 0.1);
+    outline: none;
+}
+
+/* Update grid layout to accommodate new filter */
+@media screen and (min-width: 768px) {
+    .filterContent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    /* Ensure proper alignment of all filters */
+    .filterGroup {
+        min-height: 110px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Activities section should span full width */
+    .filterGroup:nth-last-child(2) {
+        grid-column: 1 / -1;
+        min-height: auto;
+    }
+}
+
+/* Update activities grid styling */
+.activitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.activityCheckbox {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background: var(--whiteColor);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.9rem;
+    min-height: 45px;
+    justify-content: flex-start;
+}
+
+.activityCheckbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: var(--PrimaryColor);
+    flex-shrink: 0;
+}
+
+.activityCheckbox span {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+/* Update the activities container */
+.filterGroup:nth-last-child(2) {
+    padding: 1.2rem;
+}
+
+.filterGroup:nth-last-child(2) label {
+    margin-bottom: 1rem;
+}
+
+/* Style for number input with buttons */
+.numberInput {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: var(--whiteColor);
+    border: 2px solid var(--greyText);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.numberInput input {
+    width: calc(100% - 30px);
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--textColor);
+    text-align: center;
+    appearance: textfield;
+}
+
+.numberInput .arrows {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--greyText);
+}
+
+.numberInput .numberBtn {
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    border: none;
+    background: var(--inputColor);
+    color: var(--PrimaryColor);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.numberInput .numberBtn:first-child {
+    border-bottom: 1px solid var(--greyText);
+}
+
+.numberInput .numberBtn:hover {
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+}
+
+.numberInput:hover {
+    border-color: var(--PrimaryColor);
+}
+
+.numberInput:hover .arrows {
+    border-left-color: var(--PrimaryColor);
+}
+
+/* Remove old vertical input styles */
+.numberInputVertical {
+    display: none;
+}
+
+/* Add animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .textDiv .homeTitle {
+        font-size: 2.5rem;
+    }
+    
+    .textDiv .smallText {
+        font-size: 16px;
+        padding: 0.5rem 1.5rem;
+    }
+    
+    .cardDiv {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .textDiv {
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+
+    .textDiv .homeTitle {
+        font-size: 3.5rem;
+        max-width: 700px;
+    }
+
+    .textDiv .smallText {
+        font-size: 1.1rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .textDiv {
+        padding: 1.5rem 0;
+        gap: 1rem;
+    }
+
+    .textDiv .homeTitle {
+        font-size: 2.8rem;
+        max-width: 600px;
+    }
+
+    .textDiv .smallText {
+        font-size: 1rem;
+        padding: 0.7rem 1.8rem;
+        letter-spacing: 3px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .textDiv .homeTitle {
+        font-size: 2.2rem;
+        padding: 0 1rem;
+    }
+
+    .textDiv .smallText {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+        letter-spacing: 2px;
+    }
+}
+
+/* Add this to your existing styles */
+.homeTitle .highlight {
+    background: linear-gradient(120deg, #FF6B6B, #4ECDC4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0 10px;
+    position: relative;
+    display: inline-block;
+    text-shadow: none;
+}
+
+/* Add glow effect */
+.homeTitle .highlight::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: inherit;
+    filter: blur(40px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* Add vendor prefixes for transforms */
+.searchOptions:hover {
+    -webkit-transform: translateX(-50%) translateY(-2px);
+    transform: translateX(-50%) translateY(-2px);
+}
+
+/* Add vendor prefixes for transitions */
+.numberBtn {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+/* Add vendor prefixes for animations */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/* Add similar vendor prefixes for fadeInUp and fadeInDown animations */
+@-webkit-keyframes fadeInUp {
+    /* ... */
+}
+
+@keyframes fadeInUp {
+    /* ... */
+}
+
+@-webkit-keyframes fadeInDown {
+    /* ... */
+}
+
+@keyframes fadeInDown {
+    /* ... */
+}
+
+.mapModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.mapContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Ensure the map container is properly sized */
+.mapboxgl-canvas-container,
+.mapboxgl-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Style the geocoder control */
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+  font-size: 15px;
+  line-height: 20px;
+  max-width: none;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  height: 36px;
+}
+
+/* Make sure controls are above other elements */
+.mapboxgl-ctrl-top-right {
+  z-index: 2;
+}
+
+.closeBtn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1001;
+}
+/* Add these new styles to your existing CSS file */
+
+.searchContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.searchContainer .searchOptions,
+.searchContainer .searchButton {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    border-radius: 3rem;
+    background: var(--gradientColor);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.searchContainer .searchOptions span,
+.searchContainer .searchButton span {
+    font-size: 0.8rem;
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.searchContainer .searchOptions:hover,
+.searchContainer .searchButton:hover {
+    background: var(--PrimaryColor);
+}
+
+.priceInput .input input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--textColor);
+  background: var(--whiteColor);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.priceInput .input input[type="number"]:focus {
+  border-color: var(--PrimaryColor);
+  box-shadow: 0 0 0 3px rgba(var(--PrimaryColor), 0.1);
+  outline: none;
+}
+
+.flightResults {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flightCard {
+  padding: 1rem;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 8px;
+  background: var(--whiteColor);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 8px;
+  background: var(--whiteColor);
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+.suggestions li {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: black;
+}
+
+.suggestions li:hover {
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+}
+
+.destinationInput {
+  margin-bottom: 1rem;
+}
+
+.input {
+  position: relative;
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 8px;
+  background: var(--whiteColor);
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+.suggestions li {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: black;
+}
+
+.suggestions li:hover {
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+}
+
+
+
+

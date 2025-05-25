@@ -1,0 +1,910 @@
+.planner-section {
+    padding: 8rem 0 2rem;
+    background: linear-gradient(120deg, 
+        rgba(0, 183, 255, 0.05) 0%, 
+        rgba(0, 255, 209, 0.05) 50%,
+        rgba(0, 183, 255, 0.05) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.planner-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.planner-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.planner-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: var(--gradientColor);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.planner-header p {
+    color: var(--textColor);
+    font-size: 1.1rem;
+}
+
+.planner-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.7rem;
+    background: var(--whiteColor);
+    color: var(--textColor);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+}
+
+.tab:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.planner-content {
+    background: var(--whiteColor);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Itinerary Builder Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--blackColor);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--inputColor);
+    border-radius: 0.7rem;
+    font-size: 1rem;
+}
+
+.date-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.activities-section {
+    margin-top: 2rem;
+}
+
+.activities-list {
+    margin: 1rem 0;
+}
+
+.activity-item {
+    padding: 1.5rem;
+    background: var(--inputColor);
+    border-radius: 0.7rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Budget Calculator Styles */
+.budget-calculator {
+    background: var(--whiteColor);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.budget-header h3 {
+    color: var(--blackColor);
+    font-size: 1.5rem;
+}
+
+.total-budget {
+    background: var(--gradientColor);
+    color: var(--whiteColor);
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+}
+
+.budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.budget-item {
+    background: var(--inputColor);
+    padding: 1.5rem;
+    border-radius: 0.7rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.budget-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: var(--whiteColor);
+}
+
+.budget-item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.budget-icon {
+    font-size: 1.5rem;
+}
+
+.budget-label {
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+.budget-item input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--blackColor);
+    background: var(--whiteColor);
+    transition: all 0.3s ease;
+}
+
+.budget-item input:focus {
+    outline: none;
+    border-color: var(--PrimaryColor);
+}
+
+.budget-breakdown {
+    background: var(--inputColor);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-breakdown {
+    background: var(--whiteColor);
+    color: var(--textColor);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-breakdown:hover {
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+}
+
+.breakdown-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.breakdown-item {
+    display: grid;
+    grid-template-columns: 150px 1fr 120px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.breakdown-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--textColor);
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--whiteColor);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--gradientColor);
+    transition: width 0.3s ease;
+}
+
+.breakdown-amount {
+    text-align: right;
+    color: var(--blackColor);
+    font-weight: 500;
+}
+
+.percentage {
+    color: var(--textColor);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .budget-calculator {
+        padding: 1.5rem;
+    }
+
+    .budget-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .breakdown-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .breakdown-amount {
+        text-align: left;
+    }
+}
+
+/* Packing List Styles */
+.list-items {
+    margin-bottom: 2rem;
+}
+
+.list-item {
+    background: var(--whiteColor);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.item-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.list-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--PrimaryColor);
+    cursor: pointer;
+}
+
+.list-item .checked {
+    text-decoration: line-through;
+    color: var(--greyText);
+    opacity: 0.7;
+}
+
+.add-item, .add-activity {
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-item:hover, .add-activity:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .planner-tabs {
+        flex-direction: column;
+    }
+
+    .budget-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .date-inputs {
+        grid-template-columns: 1fr;
+    }
+} 
+
+/* Add these new styles */
+.budget-summary {
+    margin-top: 2rem;
+}
+
+.budget-breakdown {
+    margin-top: 2rem;
+    background: var(--inputColor);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.budget-breakdown h4 {
+    color: var(--blackColor);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.breakdown-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.breakdown-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 80px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    height: 10px;
+    background: var(--whiteColor);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--gradientColor);
+    transition: width 0.3s ease;
+}
+
+.category {
+    text-transform: capitalize;
+    color: var(--textColor);
+}
+
+.amount {
+    color: var(--PrimaryColor);
+    font-weight: 600;
+    text-align: right;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+    .budget-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .breakdown-item {
+        grid-template-columns: 80px 1fr 70px;
+        font-size: 0.9rem;
+    }
+} 
+
+/* Add these new styles */
+.add-activity-form,
+.add-item-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-activity-form input,
+.add-item-form input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--inputColor);
+    border-radius: 0.7rem;
+    font-size: 1rem;
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.activity-time {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--inputColor);
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.activity-notes {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--inputColor);
+    border-radius: 0.5rem;
+    min-height: 60px;
+    resize: vertical;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--PrimaryColor);
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    color: #ff4444;
+}
+
+.budget-item input {
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.budget-item input::-webkit-inner-spin-button,
+.budget-item input::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+/* Update Packing List Styles */
+.packing-category {
+    background: var(--inputColor);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--blackColor);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--whiteColor);
+}
+
+.item-count {
+    font-size: 0.9rem;
+    color: var(--PrimaryColor);
+    background: var(--whiteColor);
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+}
+
+.category-items {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.list-item {
+    background: var(--whiteColor);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.list-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--PrimaryColor);
+}
+
+.list-item .checked {
+    text-decoration: line-through;
+    color: var(--greyText);
+}
+
+.add-item-form {
+    margin-top: 1rem;
+}
+
+.add-item-form input {
+    background: var(--whiteColor);
+}
+/* Add progress bar for each category */
+.category-progress {
+    height: 4px;
+    background: var(--whiteColor);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradientColor);
+    transition: width 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .packing-category {
+        padding: 1rem;
+    }
+
+    .category-title {
+        font-size: 1.1rem;
+    }
+
+    .list-item {
+        padding: 0.6rem;
+    }
+}
+
+/* Add styles for new items */
+.new-item {
+    animation: highlightNew 2s ease-out;
+    background: var(--whiteColor);
+}
+
+@keyframes highlightNew {
+    0% {
+        background: var(--PrimaryColor);
+        transform: translateX(-10px);
+    }
+    50% {
+        background: rgba(var(--PrimaryColor), 0.1);
+    }
+    100% {
+        background: var(--whiteColor);
+        transform: translateX(0);
+    }
+
+}
+
+/* Move the add form above the list */
+.add-item-form {
+    margin-bottom: 1.5rem;
+    background: var(--whiteColor);
+    padding: 1rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-item-form input {
+    background: var(--inputColor);
+}
+
+/* Update list item styles */
+.list-item {
+    background: var(--whiteColor);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.list-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Delete Modal Styles */
+.delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.delete-modal-content {
+    background: var(--whiteColor);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 400px;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.delete-modal-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--blackColor);
+}
+
+.delete-modal-content p {
+    margin-bottom: 2rem;
+    color: var(--textColor);
+}
+
+.delete-modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.confirm-delete, .cancel-delete {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-delete {
+    background: #ff4444;
+    color: var(--whiteColor);
+}
+
+.cancel-delete {
+    background: var(--inputColor);
+    color: var(--textColor);
+}
+
+.confirm-delete:hover, .cancel-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .delete-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .delete-modal-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Update input field styles */
+.add-item-form {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.add-item-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--inputColor);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--textColor);
+    background: var(--whiteColor);
+}
+
+.add-item-form input::placeholder {
+    color: var(--textColor);
+    opacity: 0.7;
+}
+
+.add-item-form input:focus {
+    outline: none;
+    border-color: var(--PrimaryColor);
+}
+
+/* Style for category headers */
+.category-title {
+    color: var(--blackColor);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Style for add item button */
+.add-item-btn {
+    padding: 0.8rem 1.5rem;
+    background: var(--gradientColor);
+    color: var(--whiteColor);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.add-item-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Update budget item styles */
+.budget-item {
+    background: var(--inputColor);
+    padding: 1.5rem;
+    border-radius: 0.7rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.budget-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: var(--whiteColor);
+}
+
+.budget-amount {
+    font-size: 1.5rem;
+    color: var(--blackColor);
+    font-weight: 600;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Budget Modal Styles */
+.budget-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.budget-modal-content {
+    background: var(--whiteColor);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 400px;
+    animation: slideIn 0.3s ease;
+}
+
+.budget-modal-content h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--blackColor);
+}
+
+.budget-input-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--textColor);
+    font-size: 1.2rem;
+}
+
+.budget-input-container input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 2.5rem;
+    border: 2px solid var(--inputColor);
+    border-radius: 0.7rem;
+    font-size: 1.5rem;
+    color: var(--blackColor);
+    text-align: left;
+}
+
+.budget-input-container input:focus {
+    outline: none;
+    border-color: var(--PrimaryColor);
+}
+
+.budget-modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.save-btn, .cancel-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.save-btn {
+    background: var(--PrimaryColor);
+    color: var(--whiteColor);
+}
+
+.cancel-btn {
+    background: var(--inputColor);
+    color: var(--textColor);
+}
+
+.save-btn:hover, .cancel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide number input arrows */
+.budget-input-container input::-webkit-outer-spin-button,
+.budget-input-container input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.budget-input-container input[type=number] {
+    -moz-appearance: textfield;
+}

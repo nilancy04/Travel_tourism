@@ -1,0 +1,140 @@
+:root {
+    --primary-color: hsl(199, 100%, 33%);
+    --secondary-color: hsl(187, 85%, 43%);
+    --gradient-color: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(201, 33%, 16%);
+    --text-color: hsl(240, 4%, 36%);
+    --white-color-deam: hsl(0, 0%, 93%);
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white-color-deam);
+    width: 100%;
+    padding: 1.5rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+}
+
+.logoDiv .logo {
+    text-decoration: none;
+}
+
+.logoDiv h1 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.logoDiv h1 .icon {
+    font-size: 25px;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* Navigation Styles */
+.navigationDiv {
+    display: flex;
+    align-items: center;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navList li {
+    margin: 0 2rem;  /* This adds space between nav items */
+}
+
+.navList li a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navList li a:hover {
+    color: var(--primary-color);
+}
+
+/* Book Now Button */
+.navList .btn {
+    margin-left: 2rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--gradient-color);
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navList .btn a {
+    color: var(--white-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navList .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+}
+
+/* Media Queries */
+@media screen and (min-width: 960px) {
+    .navList li {
+        margin: 0 2.5rem;  /* Increased spacing for larger screens */
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .header {
+        padding: 1.5rem 6rem;
+    }
+
+    .navList li {
+        margin: 0 3rem;  /* Maximum spacing for largest screens */
+    }
+}
+
+/* Logo styling */
+.logoDiv .logo h1 {
+    display: flex;
+    align-items: center;
+}
+
+.logoDiv .logo .icon {
+    font-size: 25px;
+    color: var(--PrimaryColor);
+    margin-right: 10px;
+}
+
+.logoDiv .logo .logoText {
+    background: linear-gradient(to right, var(--PrimaryColor), var(--SecondaryColor));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* Add hover effect */
+.logoDiv .logo:hover .icon {
+    transform: rotate(10deg);
+}
+
+.logoDiv .logo:hover .logoText {
+    background: linear-gradient(to left, var(--PrimaryColor), var(--SecondaryColor));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
