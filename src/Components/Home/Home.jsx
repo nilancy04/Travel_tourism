@@ -101,11 +101,12 @@ const Home = () => {
               marker.remove();
             }
           });
+          console.log('Map and Geocoder initialized successfully.');
         });
 
         setMap(newMap);
       } catch (error) {
-        console.error('Error initializing map:', error);
+        console.error('Error initializing map or geocoder:', error);
       }
     }
 
@@ -132,7 +133,7 @@ const Home = () => {
     
     if (query.length >= 2) {
       try {
-        console.log('Fetching suggestions for:', query);
+        console.log('Fetching suggestions for origin:', query);
         const locations = await autosuggestLocations(query);
         console.log('Received locations for origin:', locations);
         setOriginSuggestions(locations || []);
@@ -151,7 +152,7 @@ const Home = () => {
     
     if (query.length >= 2) {
       try {
-        console.log('Fetching suggestions for:', query);
+        console.log('Fetching suggestions for destination:', query);
         const locations = await autosuggestLocations(query);
         console.log('Received locations for destination:', locations);
         setDestinationSuggestions(locations || []);
