@@ -572,6 +572,7 @@ const Explore = () => {
                   <button 
                     className={`favorite-btn ${favorites.includes(attraction.id) ? 'active' : ''}`}
                     onClick={() => toggleFavorite(attraction.id)}
+                    aria-label="Toggle favorite"
                   >
                     <FaHeart />
                   </button>
