@@ -23,7 +23,7 @@ const ScrollToTop = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <ScrollToTop />
       <Navbar/>
       <Routes>
